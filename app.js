@@ -2,10 +2,14 @@ require('dotenv').config()
 const express = require("express");
 const mariadb=require("mariadb")
 const bodyParser= require("body-parser");
+var cors = require('cors');
 const app = express();
 app.use(bodyParser())
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
+app.use(cors());
+
+
 
 
 const pool = mariadb.createPool({
